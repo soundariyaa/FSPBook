@@ -1,0 +1,62 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+</div>
+<style>
+        #wrapper.active #sidebar-wrapper
+        {
+            left: 50px;
+        }
+ </style>
+<div id="sidebar-wrapper">
+            <ul id="sidebar_menu" class="sidebar-nav" style="text-align: right; padding-right: 10px;
+                padding-top: 10px">
+                <li class="sidebar-brand"><a id="menu-toggle" href="#"><span id="main_icon" class="navbar-icon fa fa-bars icon">
+                </span></a></li>
+            </ul>
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand"><a href="#">Start Bootstrap </a></li>
+                <li><a href="#">Home</a> </li>
+                <li><a href="#">About</a> </li>
+                <li><a href="#">Contact</a> </li>
+            </ul>
+        </div>
+<table class="table table-bordered table-hover table-striped" align="right" >
+    <thead>
+        <tr>
+            <th>AuthorName</th>
+            <th>DateTimePosted</th>
+            <th>Content</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.ListPostsViewModels)
+        {
+            <tr>
+                <td>@item.AuthorName</td>
+                <td>@item.DateTimePosted</td>
+                <td>@item.Content</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+ 
+@*<nav aria-label="Page navigation example">
+    <form method="post">
+        <ul class="pagination">
+            <li class="page-item"><a asp-page-handler="FuncaoClique" class="page-link" href="#">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
+    </form>
+    
+</nav>*@
